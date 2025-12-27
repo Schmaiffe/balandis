@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: sans-serif; text-align: center; padding: 50px; }
+  input { font-size: 1.2em; padding: 5px; margin-top: 10px; }
+  button { padding: 10px 20px; margin: 10px; font-size: 1em; }
+</style>
+</head>
+<body>
+
+
+<!-- Text input -->
+<input type="text" id="answer" placeholder="Type here">
+
+<!-- Buttons -->
+<div>
+  <button id="forgetButton" onclick="goBack()">I forgot, let's go back</button>
+  <button id="nextButton" onclick="nextPage()" style="display:none;">Next ➡️</button>
+</div>
+
+<script>
+  const correctAnswer = "balandis";
+  const input = document.getElementById('answer');
+  const nextButton = document.getElementById('nextButton');
+  const forgetButton = document.getElementById('forgetButton');
+
+  input.addEventListener('input', () => {
+    if(input.value.trim().toLowerCase() === correctAnswer) {
+      nextButton.style.display = 'inline-block';
+      forgetButton.style.display = 'none';
+    } else {
+      nextButton.style.display = 'none';
+      forgetButton.style.display = 'inline-block';
+    }
+  });
+
+  function goBack() {
+    window.history.back(); // goes back to first page
+  }
+
+  function nextPage() {
+    // replace with your next lesson URL
+    window.location.href = "lesson3.html";
+  }
+</script>
+
+</body>
+</html>
