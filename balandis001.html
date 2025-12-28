@@ -45,7 +45,15 @@
     window.location.href = "https://sites.google.com/view/balandis/home/balandis03";
   }
 </script>
-
+  
+  // <<< NEW CODE: Press Enter to go next >>>
+  input.addEventListener('keypress', function(e) {
+    if(e.key === 'Enter' && input.value.trim().toLowerCase() === correctAnswer) {
+      nextPage();
+    }
+  });
+</script>
 </body>
 </html>
+
 
